@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tulk Enterprises | Baton Rouge Pool Cleaning & Maintenance</title>
+  <meta name="description" content="Professional pool cleaning, maintenance, equipment repair, and vinyl liner replacement in Baton Rouge and surrounding areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:      #08304e;
+      --blue:      #1466a8;
+      --sky:       #3aaed8;
+      --sky-pale:  #c8eaf8;
+      --light:     #e8f6fd;
+      --lighter:   #f4faff;
+      --white:     #ffffff;
+      --text:      #0f1f2e;
+      --muted:     #546e7a;
+      --gold:      #d4991a;
+      --gold-lt:   #fdf3dc;
+      --radius:    12px;
+      --shadow-sm: 0 2px 10px rgba(8,48,78,.08);
+      --shadow-md: 0 6px 24px rgba(8,48,78,.13);
+      --shadow-lg: 0 16px 48px rgba(8,48,78,.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--lighter); -webkit-font-smoothing: antialiased; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--lighter); }
+    ::-webkit-scrollbar-thumb { background: var(--sky-pale); border-radius: 99px; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,48,78,.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 66px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--sky) 0%, var(--blue) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; box-shadow: 0 2px 8px rgba(58,174,216,.4);
+    }
+    .logo-text { color: var(--white); font-family: 'DM Serif Display', serif; font-size: 1.15rem; letter-spacing: .3px; }
+    .logo-text span { color: var(--sky); }
+    .logo-image {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { color: rgba(255,255,255,.78); text-decoration: none; font-size: .88rem; font-weight: 500; padding: 7px 14px; border-radius: 7px; transition: background .18s, color .18s; letter-spacing: .2px; }
+    .nav-links a:hover { background: rgba(255,255,255,.09); color: var(--white); }
+    .nav-cta {
+      background: var(--sky) !important; color: var(--navy) !important;
+      font-weight: 700 !important; letter-spacing: .3px;
+      box-shadow: 0 3px 12px rgba(58,174,216,.35);
+      transition: background .18s, box-shadow .18s, transform .1s !important;
+    }
+    .nav-cta:hover { background: #5ac3e5 !important; box-shadow: 0 5px 18px rgba(58,174,216,.45) !important; transform: translateY(-1px) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; overflow: hidden;
+      background: linear-gradient(140deg, var(--navy) 0%, #0d5080 50%, #1480b8 100%);
+      color: var(--white);
+      padding: 100px 6% 90px;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px; padding: 5px 16px;
+      font-size: .78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--sky-pale); margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem; line-height: 1.15; margin-bottom: 18px;
+      text-shadow: 0 2px 20px rgba(0,0,0,.2);
+    }
+    .hero h1 em { font-style: normal; color: var(--sky); }
+    .hero p { font-size: 1.05rem; opacity: .85; line-height: 1.7; margin-bottom: 34px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 42px; }
+    .btn-primary {
+      background: var(--gold); color: #1a1200;
+      font-weight: 700; font-size: .97rem; padding: 14px 30px;
+      border-radius: var(--radius); text-decoration: none;
+      box-shadow: 0 4px 18px rgba(212,153,26,.4);
+      transition: background .2s, transform .1s, box-shadow .2s;
+      letter-spacing: .2px;
+    }
+    .btn-primary:hover { background: #c48a10; transform: translateY(-2px); box-shadow: 0 7px 24px rgba(212,153,26,.45); }
+    .btn-secondary {
+      background: rgba(255,255,255,.1); color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.35);
+      font-weight: 600; font-size: .97rem; padding: 13px 26px;
+      border-radius: var(--radius); text-decoration: none;
+      backdrop-filter: blur(4px);
+      transition: background .2s, border-color .2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.6); }
+    .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .hero-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px; padding: 7px 14px;
+      font-size: .82rem; font-weight: 500; color: rgba(255,255,255,.88);
+    }
+    .hero-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+
+    /* ── DIVIDER WAVE ── */
+    .wave { display: block; width: 100%; background: var(--white); line-height: 0; }
+    .wave svg { display: block; width: 100%; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 80px 6%; }
+    .section-white { background: var(--white); }
+    .section-light { background: var(--lighter); }
+    .section-tinted { background: var(--light); }
+    .tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue); background: var(--light);
+      border: 1px solid var(--sky-pale);
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 12px;
+    }
+    .section-head { text-align: center; margin-bottom: 52px; }
+    .section-head .tag { display: block; margin-bottom: 12px; }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem; color: var(--navy); margin-bottom: 12px; line-height: 1.2;
+    }
+    .lead { color: var(--muted); font-size: .97rem; line-height: 1.72; max-width: 580px; margin: 0 auto; }
+
+    /* ── SERVICES ── */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .service-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 30px 26px; box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(58,174,216,.12);
+      position: relative; overflow: hidden;
+      transition: transform .22s, box-shadow .22s;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--sky), var(--blue));
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .svc-icon {
+      width: 52px; height: 52px; border-radius: 13px;
+      background: var(--light); display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(58,174,216,.15);
+    }
+    .service-card h3 { font-size: 1.02rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .service-card > p { font-size: .88rem; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+    .svc-list { list-style: none; margin-top: 14px; padding: 0; }
+    .svc-list li {
+      font-size: .84rem; color: var(--muted); line-height: 1.5;
+      padding: 6px 0 6px 22px; position: relative;
+      border-top: 1px solid #edf5fb;
+    }
+    .svc-list li::before {
+      content: '';
+      position: absolute; left: 5px; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--sky);
+    }
+
+    /* ── EXPERIENCE BANNER ── */
+    .exp-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d5888 100%);
+      color: var(--white); padding: 60px 6%;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;
+      text-align: center;
+    }
+    .exp-main { display: flex; flex-direction: column; align-items: center; }
+    .exp-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 6rem; line-height: 1; color: var(--sky);
+      text-shadow: 0 0 40px rgba(58,174,216,.4);
+    }
+    .exp-label { font-size: 1.1rem; font-weight: 600; opacity: .9; margin-top: 6px; }
+    .exp-divider { width: 1px; height: 80px; background: rgba(255,255,255,.15); }
+    .exp-text { max-width: 360px; text-align: left; }
+    .exp-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 10px; }
+    .exp-text p { font-size: .93rem; opacity: .78; line-height: 1.7; }
+
+    /* ── BEFORE / AFTER ── */
+    .ba-stack { display: flex; flex-direction: column; gap: 32px; max-width: 920px; margin: 0 auto; }
+    .ba-card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-md);
+      border: 1px solid rgba(58,174,216,.1);
+    }
+    .ba-card-header {
+      display: flex; align-items: center; gap: 16px;
+      padding: 22px 26px 18px;
+      border-bottom: 1px solid #e8f3fb;
+      background: linear-gradient(to right, var(--lighter), var(--white));
+    }
+    .ba-card-header .svc-icon { margin-bottom: 0; flex-shrink: 0; }
+    .ba-card-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .ba-card-sub { font-size: .84rem; color: var(--muted); }
+    .ba-photos { display: flex; flex-direction: row; width: 100%; align-items: stretch; }
+    .ba-photo { position: relative; flex: 1 1 50%; overflow: hidden; aspect-ratio: 9 / 16; }
+    .ba-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+    .ba-photo:hover img { transform: scale(1.04); }
+    .ba-label {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      font-size: .7rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+    .label-before { background: rgba(10,10,10,.65); color: #ffd580; border: 1px solid rgba(255,213,128,.25); }
+    .label-after  { background: rgba(8,48,78,.8); color: var(--sky); border: 1px solid rgba(58,174,216,.3); }
+    .ba-divider { width: 4px; background: var(--white); flex-shrink: 0; position: relative; z-index: 3; box-shadow: 0 0 10px rgba(0,0,0,.15); }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 44px; align-items: start; max-width: 960px; margin: 0 auto; }
+    .contact-info-panel {}
+    .contact-info-panel h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
+    .contact-info-panel .desc { font-size: .9rem; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+    .c-item { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
+    .c-ico {
+      width: 44px; height: 44px; border-radius: 11px;
+      background: var(--light); border: 1px solid var(--sky-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .c-detail strong { display: block; font-size: .73rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
+    .c-detail span { font-size: .91rem; color: var(--muted); }
+    .contact-form-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(58,174,216,.1);
+    }
+    .contact-form-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #d0e8f5; border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .92rem; color: var(--text); background: #fafdff;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--sky); box-shadow: 0 0 0 3px rgba(58,174,216,.14);
+    }
+    .field textarea { min-height: 92px; resize: vertical; }
+    .submit-btn {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: var(--white); border: none; border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .98rem; font-weight: 700;
+      cursor: pointer; letter-spacing: .3px;
+      box-shadow: 0 4px 16px rgba(20,102,168,.3);
+      transition: opacity .2s, transform .15s, box-shadow .2s;
+    }
+    .submit-btn:hover { opacity: .92; transform: translateY(-2px); box-shadow: 0 7px 22px rgba(20,102,168,.35); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: rgba(255,255,255,.55);
+      padding: 30px 6%;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-logo { color: var(--white); font-family: 'DM Serif Display', serif; font-size: 1.05rem; }
+    .footer-logo span { color: var(--sky); }
+    .footer-logo-image {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
+    }
+    footer p { font-size: .82rem; }
+    .footer-nav a { color: rgba(255,255,255,.5); text-decoration: none; margin-left: 18px; font-size: .82rem; font-weight: 500; transition: color .18s; }
+    .footer-nav a:hover { color: var(--white); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 740px) {
+      .hero h1 { font-size: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .section { padding: 56px 5%; }
+      .exp-banner { flex-direction: column; }
+      .exp-divider { width: 80px; height: 1px; }
+      .exp-text { text-align: center; }
+      /* ba-photos uses aspect-ratio, no fixed height override needed */
+      .nav-links a.hide-mob { display: none; }
+      .contact-form-card { padding: 24px 18px; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 4%; }
+      .hero { padding: 72px 5% 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <img src="images/generated-image.png" alt="Tulk Enterprises logo" class="logo-image" width="36" height="36" />
+    <span class="logo-text">Tulk Enterprises</span>
+  </a>
+  <div class="nav-links">
+    <a href="#services" class="hide-mob">Services</a>
+    <a href="#work" class="hide-mob">Our Work</a>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--sky);display:inline-block;"></span>Serving Baton Rouge Since 1985</div>
+    <h1>Baton Rouge's Trusted<br><em>Pool Care Experts</em></h1>
+    <p>Professional pool cleaning, maintenance, equipment repair, and vinyl liner replacement &mdash; delivered with the expertise that only 40+ years in the field can provide.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+    <div class="hero-chips">
+      <div class="hero-chip"><span class="dot"></span>Baton Rouge &amp; Surrounding Areas</div>
+      <div class="hero-chip"><span class="dot"></span>40+ Years Experience</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section-white" id="services">
+  <div class="section-head">
+    <span class="tag">What We Do</span>
+    <h2>Our Services</h2>
+    <p class="lead">Everything your pool needs &mdash; from routine cleaning to full liner replacements &mdash; handled by experienced professionals.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="svc-icon">&#129529;</div>
+      <h3>Monthly Pool Cleaning</h3>
+      <p>A thorough monthly visit to keep your pool spotless, balanced, and swim-ready.</p>
+      <ul class="svc-list">
+        <li>Skimming</li>
+         <li>Vacuuming</li></li>
+        <li>Brushing walls &amp; tile</li>
+        <li>Emptying baskets &amp; skimmers</li>
+        <li>Water chemistry test &amp; balance</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="svc-icon">&#9881;</div>
+      <h3>Maintenance and Equipment Repair</h3>
+      <p>Fast diagnostics and repairs to get your pool equipment running like new again.</p>
+      <ul class="svc-list">
+        <li>Pump &amp; motor repair/replacement</li>
+        <li>Filter cleaning &amp; repair</li>
+        <li>Chemical diagnostics</li>
+        <li>Automation &amp; timer systems</li>
+        <li>Leak detection</li>
+      </ul>
+    </div>
+
+
+    <div class="service-card">
+      <div class="svc-icon">&#127946;</div>
+      <h3>Vinyl Liner Replacement</h3>
+      <p>Old, faded, or torn liner? We measure, source, and install a perfect-fit replacement.</p>
+      <ul class="svc-list">
+        <li>Custom liner measuring &amp; ordering</li>
+        <li>Full old liner removal</li>
+        <li>Professional installation</li>
+        <li>Wide pattern selection</li>
+        <li>Post-install water balancing</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE BANNER -->
+<div class="exp-banner">
+  <div class="exp-main">
+    <div class="exp-num">40+</div>
+    <div class="exp-label">Years in Business</div>
+  </div>
+  <div class="exp-divider"></div>
+  <div class="exp-text">
+    <h3>Four Decades of Pool Expertise</h3>
+    <p>We've seen all kinds of pool problems over 40+ years in the field. When you call us, you're getting the experience that only decades on the job can provide.</p>
+  </div>
+</div>
+
+<!-- BEFORE & AFTER -->
+<section class="section section-light" id="work">
+  <div class="section-head">
+    <span class="tag">Our Work</span>
+    <h2>See the Difference</h2>
+    <p class="lead">See actual before-and-after results from local pools.</p>
+  </div>
+
+  <div class="ba-stack">
+
+    <div class="ba-card">
+      <div class="ba-card-header">
+        <div class="svc-icon">&#129529;</div>
+        <div>
+          <div class="ba-card-title">Pool Cleaning &amp; Water Treatment</div>
+        </div>
+      </div>
+      <div class="ba-photos">
+        <div class="ba-photo">
+          <img src="images/dirtypool1-compressed.webp" alt="Green pool before cleaning" loading="lazy" />
+          <span class="ba-label label-before">Before</span>
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-photo">
+          <img src="images/dirtypool2-compressed.webp" alt="Clean pool after service" loading="lazy" />
+          <span class="ba-label label-after">After</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-card">
+      <div class="ba-card-header">
+        <div class="svc-icon">&#127946;</div>
+        <div>
+          <div class="ba-card-title">Vinyl Liner Replacement</div>
+        </div>
+      </div>
+      <div class="ba-photos ba-photos-three">
+        <div class="ba-photo">
+          <img src="images/vinyl_before.jpg" alt="Old worn pool liner" loading="lazy" />
+          <span class="ba-label label-before">Before</span>
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-photo">
+          <img src="images/vinyl_during.jpg" alt="New vinyl liner being installed" loading="lazy" />
+          <span class="ba-label">During</span>
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-photo">
+          <img src="images/vinyl_after.png" alt="Finished vinyl liner replacement" loading="lazy" />
+          <span class="ba-label label-after">After</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-white" id="contact">
+  <div class="section-head">
+    <span class="tag">Contact Us</span>
+    <h2>Get Your Free Quote</h2>
+    <p class="lead">Reach out today and we'll get back to you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info-panel">
+      <h3>We're here to help</h3>
+      <p class="desc">Whether you need a one-time clean or a full liner replacement, we're ready to take a look. Fill out the form or reach us directly below.</p>
+      <div class="c-item">
+        <div class="c-ico">&#128222;</div>
+        <div class="c-detail"><strong>Phone</strong><span>(225) 939-3900</span></div>
+      </div>
+      <div class="c-item">
+        <div class="c-ico">&#128231;</div>
+        <div class="c-detail"><strong>Email</strong><span>jimmy@tulkenterprises.org</span></div>
+      </div>
+      <div class="c-item">
+        <div class="c-ico">&#128205;</div>
+        <div class="c-detail"><strong>Service Area</strong><span>Baton Rouge, Gonzales, Denham Springs, Zachary, Central, Prairieville</span></div>
+      </div>
+      <div class="c-item">
+        <div class="c-ico">&#128336;</div>
+        <div class="c-detail"><strong>Hours</strong><span>Monday-Friday</span></div>
+      </div>
+    </div>
+    <div class="contact-form-card">
+      <h3>Send us a message</h3>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="field"><label>First Name</label><input type="text" placeholder="Insert First Name Here" required /></div>
+          <div class="field"><label>Last Name</label><input type="text" placeholder="Insert Last Name Here" /></div>
+        </div>
+        <div class="field"><label>Phone Number</label><input type="tel" placeholder="(225) 999-8888" /></div>
+        <div class="field"><label>Email Address</label><input type="email" placeholder="Insert your email address here" required /></div>
+        <div class="field">
+          <label>Service Needed</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Monthly Pool Cleaning</option>
+            <option>Maintenance and Equipment Repair</option>
+            <option>Vinyl Liner Replacement</option>
+          </select>
+        </div>
+        <div class="field"><label>Message</label><textarea></textarea></div>
+        <button type="submit" class="submit-btn">Send My Request &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="images/generated-image.png" alt="Tulk Enterprises logo" class="footer-logo-image" width="30" height="30" />
+    <span class="footer-logo">Tulk Enterprises</span>
+  </div>
+  <div class="footer-meta">
+    <p>&copy; 2026 Website built and managed by American Hosting and Web Design. All rights reserved.</p>
+    <a href="https://us17.org/webdesign.html" target="_blank" rel="noopener noreferrer" class="footer-flag-link" aria-label="Visit web design page" 
+    style="display:flex; align-items:center; justify-content:center; gap:10px; text-decoration:none;"><img 
+    src="https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_the_United_States.png" alt="American flag" 
+    class="footer-flag" width="28" height="15" /><span>&lt;-- Click the flag for your own web design --&gt;</span><img 
+    src="https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_the_United_States.png" alt="American flag" class="footer-flag" width="28" height="15" />
+    </a>
+  </div>
+  <div class="footer-nav">
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = '\u2705 Sent! We\'ll be in touch soon.';
+    btn.style.background = 'linear-gradient(135deg,#1a7f4b,#0f5c35)';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
