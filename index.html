@@ -241,8 +241,8 @@
     .ba-divider { width: 4px; background: var(--white); flex-shrink: 0; position: relative; z-index: 3; box-shadow: 0 0 10px rgba(0,0,0,.15); }
 
     /* ── CONTACT ── */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 44px; align-items: start; max-width: 960px; margin: 0 auto; }
-    .contact-info-panel {}
+    .contact-grid { display: flex; justify-content: center; max-width: 960px; margin: 0 auto; }
+.contact-info-panel { max-width: 520px; width: 100%; }
     .contact-info-panel h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
     .contact-info-panel .desc { font-size: .9rem; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
     .c-item { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
@@ -510,7 +510,7 @@
         <div class="c-ico">&#128336;</div>
         <div class="c-detail"><strong>Hours</strong><span>Monday-Friday</span></div>
       </div>
-  ###
+  
   </div>
 </section>
 
@@ -535,16 +535,6 @@
     <a href="#contact">Contact</a>
   </div>
 </footer>
-
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.submit-btn');
-    btn.textContent = '\u2705 Sent! We\'ll be in touch soon.';
-    btn.style.background = 'linear-gradient(135deg,#1a7f4b,#0f5c35)';
-    btn.disabled = true;
-  }
-</script>
 
 </body>
 </html>
